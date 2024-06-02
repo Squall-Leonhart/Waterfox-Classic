@@ -97,7 +97,7 @@ jobs:
         run: |
           iwr -useb get.scoop.sh -outfile 'install.ps1'
           .\install.ps1 -RunAsAdmin
-          scoop install sccache llvm@16.0.2 nasm --global
+          scoop install sccache llvm@14.0.6 nasm --global
           mkdir -p ~\\scoop\\buckets\\my-bucket
           Copy-Item -Path $env:GITHUB_WORKSPACE\\build\\github-actions\\mozilla-build.json -Destination ~\scoop\buckets\my-bucket
           scoop install my-bucket/mozilla-build --global
